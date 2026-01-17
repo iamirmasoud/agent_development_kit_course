@@ -330,3 +330,5 @@ Then select the agent you want to test from the dropdown menu in the web UI:
 - [ADK Callbacks Documentation](https://google.github.io/adk-docs/callbacks/)
 - [Types of Callbacks](https://google.github.io/adk-docs/callbacks/types-of-callbacks/)
 - [Design Patterns and Best Practices](https://google.github.io/adk-docs/callbacks/design-patterns-and-best-practices/)
+
+![img.png](img.png)
