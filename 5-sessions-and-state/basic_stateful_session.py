@@ -14,7 +14,7 @@ async def main():
     session_service_stateful = InMemorySessionService()
 
     initial_state = {
-        "user_name": "Brandon Hancock",
+        "user_name": "Amir Masoud",
         "user_preferences": """
             I like to play Pickleball, Disc Golf, and Tennis.
             My favorite food is Mexican.

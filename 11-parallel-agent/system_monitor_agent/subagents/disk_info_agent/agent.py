@@ -5,6 +5,7 @@ This agent is responsible for gathering and analyzing disk information.
 """
 
 from google.adk.agents import LlmAgent
+from google.adk.models import LiteLlm
 
 from .tools import get_disk_info
 
@@ -14,7 +15,10 @@ GEMINI_MODEL = "gemini-2.0-flash"
 # Disk Information Agent
 disk_info_agent = LlmAgent(
     name="DiskInfoAgent",
-    model=GEMINI_MODEL,
+    model=LiteLlm(
+        model="huggingface/together/meta-llama/Llama-3.3-70B-Instruct"
+        # or a smaller / different instruct model on HF
+    ),
     instruction="""You are a Disk Information Agent.
     
     When asked for system information, you should:

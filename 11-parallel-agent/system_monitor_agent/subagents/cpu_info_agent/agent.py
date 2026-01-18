@@ -5,6 +5,7 @@ This agent is responsible for gathering and analyzing CPU information.
 """
 
 from google.adk.agents import LlmAgent
+from google.adk.models import LiteLlm
 
 from .tools import get_cpu_info
 
@@ -14,7 +15,10 @@ GEMINI_MODEL = "gemini-2.0-flash"
 # CPU Information Agent
 cpu_info_agent = LlmAgent(
     name="CpuInfoAgent",
-    model=GEMINI_MODEL,
+    model=LiteLlm(
+        model="huggingface/together/meta-llama/Llama-3.3-70B-Instruct"
+        # or a smaller / different instruct model on HF
+    ),
     instruction="""You are a CPU Information Agent.
     
     When asked for system information, you should:

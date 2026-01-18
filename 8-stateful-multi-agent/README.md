@@ -49,7 +49,7 @@ session_service = InMemorySessionService()
 def initialize_state():
     """Initialize the session state with default values."""
     return {
-        "user_name": "Brandon Hancock",
+        "user_name": "Amir Masoud",
         "purchased_courses": [""],
         "interaction_history": [],
     }

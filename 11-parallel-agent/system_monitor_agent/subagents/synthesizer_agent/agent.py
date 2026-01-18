@@ -6,6 +6,7 @@ to create a comprehensive system health report.
 """
 
 from google.adk.agents import LlmAgent
+from google.adk.models import LiteLlm
 
 # --- Constants ---
 GEMINI_MODEL = "gemini-2.0-flash"
@@ -13,7 +14,10 @@ GEMINI_MODEL = "gemini-2.0-flash"
 # System Report Synthesizer Agent
 system_report_synthesizer = LlmAgent(
     name="SystemReportSynthesizer",
-    model=GEMINI_MODEL,
+    model=LiteLlm(
+        model="huggingface/together/meta-llama/Llama-3.3-70B-Instruct"
+        # or a smaller / different instruct model on HF
+    ),
     instruction="""You are a System Report Synthesizer.
     
     Your task is to create a comprehensive system health report by combining information from:
